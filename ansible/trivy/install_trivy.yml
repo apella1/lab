@@ -19,14 +19,14 @@
         state: directory
         owner: vuls
         group: vuls
-        mode: '0750'
+        mode: "0750"
     - name: create trivy reports directory
       file:
         path: /var/trivy
         state: directory
         owner: vuls
         group: vuls
-        mode: '0750'
+        mode: "0750"
     - name: copy the necessary files
       copy:
         src: "{{ item }}"
@@ -67,7 +67,7 @@
 - block:
     - name: login to Docker registry
       docker_login:
-        registry: docker-registry.hello.nl 
+        registry: docker-registry.hello.nl
         username: john
         password: !vault |
           $ANSIBLE_VAULT;1.1;AES256
@@ -78,8 +78,8 @@
         state: present
     - name: login to Docker registry
       docker_login:
-        registry: docker-registry.hello.nl 
-        username: john 
+        registry: docker-registry.hello.nl
+        username: john
         password: !vault |
           $ANSIBLE_VAULT;1.1;AES256
           3830663863353938373961636333303133353138343138660a303038613066383333383165386130
